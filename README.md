@@ -89,5 +89,3 @@ Isso encerrará os contêineres e limpará os recursos utilizados.
 ## Contribuindo
 
 Se você quiser contribuir para este projeto, sinta-se à vontade para fazer um fork e enviar pull requests. Agradecemos antecipadamente por suas contribuições!
-
-```
