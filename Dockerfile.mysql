@@ -1,0 +1,8 @@
+# Use a imagem oficial do MySQL como base
+FROM mysql:latest
+
+# Defina as variáveis de ambiente para configurar o MySQL
+ENV MYSQL_ROOT_PASSWORD=root
+ENV MYSQL_DATABASE=design
+ENV MYSQL_USER=user
+ENV MYSQL_PASSWORD=password

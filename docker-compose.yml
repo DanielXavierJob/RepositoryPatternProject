@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+  test:
+    # Use o Dockerfile.test para construir o contêiner de testes
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    # Monte o diretório de trabalho local para o diretório de trabalho dentro do contêiner
+    volumes:
+      - .:/app
+    depends_on:
+      - mysql
+    networks:
+      - mysql
+  mysql:
+    # Use o Dockerfile.mysql para construir o contêiner MySQL
+    build:
+      context: .
+      dockerfile: Dockerfile.mysql
+    # Exponha a porta 3306 para acessar o MySQL
+    ports:
+      - "3306:3306"
+    networks:
+      - mysql
+  app:
+    # Use o Dockerfile.app para construir o contêiner da aplicação
+    build:
+      context: .
+      dockerfile: Dockerfile.app
+    # Monte o diretório de trabalho local para o diretório de trabalho dentro do contêiner
+    volumes:
+      - .:/app
+    # Exponha a porta 5000 para acessar a aplicação
+    depends_on:
+      - mysql
+    ports:
+      - "5000:5000"
+    networks:
+      - mysql
+
+networks:
+  mysql:

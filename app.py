@@ -12,7 +12,7 @@ from modules.stores.store_route import store_bp
 app = Flask(__name__)
 
 # Configure the SQLite database, relative to the app instance folder
-app.config["SQLALCHEMY_DATABASE_URI"] = "mysql://root:@localhost/design"
+app.config["SQLALCHEMY_DATABASE_URI"] = "mysql://root:root@mysql/design"
 
 # Initialize the app with the database extension
 db_connection.init_app(app)
@@ -35,4 +35,7 @@ api.add_namespace(payment_bp)
 
 if __name__ == '__main__':
     # Run the Flask application in debug mode
-    app.run(debug=True)
+    app.run(host="0.0.0.0",
+          port="5000",
+          threaded=True,
+          debug=True)

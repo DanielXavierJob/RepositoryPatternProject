@@ -1,7 +1,7 @@
 import unittest
 from flask import Flask
 from flask_restx import Api
-from main import db_connection, store_bp, product_bp, client_bp, payment_bp
+from app import db_connection, store_bp, product_bp, client_bp, payment_bp
 
 class TestMain(unittest.TestCase):
     def setUp(self):
