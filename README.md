@@ -72,6 +72,9 @@ docker compose up app
 Caso queira deixar em segundo plano só adicioanr a flag ```-d``` ao final do bash
 Isso iniciará o contêiner da aplicação.
 
+## Documentação Swagger
+
+A documentação swagger da aplicação se encontra na rota: http://localhost:5000
 
 ## Encerrando o Projeto
 
